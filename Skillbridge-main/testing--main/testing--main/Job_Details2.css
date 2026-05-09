@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+}
+
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #1e2a78;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+.logo {
+    margin-bottom: 30px;
+}
+
+.menu {
+    list-style: none;
+    flex: 1;
+}
+
+.menu li {
+    padding: 12px;
+    margin: 6px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+}
+
+.menu li:hover,
+.menu .active {
+    background: #2f3dbb;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: #00c896;
+    border-radius: 50%;
+}
+
+.avatar.small {
+    width: 30px;
+    height: 30px;
+}
+
+.avatar.profile-pic {
+    background: none;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+/* Main */
+.main {
+    flex: 1;
+    padding: 25px;
+    margin-left: 250px;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 50%;
+    border: 1px solid #ddd;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Back */
+.back {
+    margin: 10px 0 20px;
+    color: #555;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.back:hover {
+    color: #1e2a78;
+    text-decoration: underline;
+}
+
+/* Layout */
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+.left {
+    flex: 2;
+}
+
+.right {
+    flex: 1;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+/* Meta */
+.meta {
+    display: flex;
+    gap: 15px;
+    color: gray;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* Tags */
+.tags {
+    margin: 10px 0;
+}
+
+.tags span {
+    background: #e6f7f1;
+    color: #00a67e;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+/* Info Box */
+.info-box {
+    display: flex;
+    justify-content: space-between;
+    background: #f1f3f7;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.info-box small {
+    color: gray;
+}
+
+.status {
+    background: #d4f5e9;
+    color: #00a67e;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+/* Button */
+.bid-btn {
+    width: 100%;
+    padding: 12px;
+    background: #00b894;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.bid-btn:hover {
+    background: #019875;
+}
+
+/* Client */
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.avatar.big {
+    width: 50px;
+    height: 50px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.avatar.big.profile-pic {
+    background: none;
+    display: block;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.client-stats p {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.profile-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.report-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    background: #ffcccc;
+    color: red;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.report-btn:hover {
+    background: #ff9999;
+}

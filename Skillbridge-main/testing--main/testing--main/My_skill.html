@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBridge - My Skills</title>
+    <link rel="stylesheet" href="My_skill.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2 class="logo">SkillBridge</h2>
+            </div>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="Browse_jobs.html" class="nav-item"><i class="fa-solid fa-briefcase"></i> Browse Jobs</a>
+                <a href="My_bids.html" class="nav-item"><i class="fa-solid fa-file-invoice-dollar"></i> My Bids</a>
+                <a href="My_skill.html" class="nav-item"><i class="fa-solid fa-shield-halved"></i> My Skills</a>
+                <a href="My_earnings.html" class="nav-item"><i class="fa-solid fa-wallet"></i> Earnings</a>
+                <a href="Notifications.html" class="nav-item"><i class="fa-solid fa-bell"></i> Notifications</a>
+                <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+            </nav>
+            <a href="profile.html" class="sidebar-user" style="text-decoration: none; color: inherit;">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Alex Chan" class="user-avatar">
+                <div class="user-info">
+                    <p class="user-name">Alex Chan</p>
+                    <p class="user-role">Freelancer</p>
+                </div>
+            </a>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search jobs, freelancers, or skills...">
+                </div>
+                <div class="header-right">
+                    <a href="Notifications.html"><button class="icon-button"><i class="fa-regular fa-bell notification-bell"></i></button></a>
+                    <a href="profile.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Alex Chan" class="profile-header-avatar">
+                        <span class="profile-header-name">Alex Chan</span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="page-body">
+                <section class="page-title-section">
+                    <h1>My Skills</h1>
+                    <p class="subtitle">Manage and verify your professional skills</p>
+                </section>
+
+                <section class="verified-skills-section">
+                    <div class="section-header">
+                        <h2>Verified Skills</h2>
+                        <span class="count">2 skills verified</span>
+                    </div>
+                    <div class="verified-grid">
+                        <div class="verified-card">
+                            <div class="card-header">
+                                <span class="skill-icon">💻</span>
+                                <i class="fa-solid fa-award verified-badge"></i>
+                            </div>
+                            <h3>Web Development</h3>
+                            <div class="score-row">
+                                <span>Score</span>
+                                <span class="score-percent">95%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress fill-95"></div></div>
+                            <p class="verify-date">Verified: 1/15/2026</p>
+                            <button class="retake-btn">Retake Quiz</button>
+                        </div>
+
+                        <div class="verified-card">
+                            <div class="card-header">
+                                <span class="skill-icon">🖋️</span>
+                                <i class="fa-solid fa-award verified-badge"></i>
+                            </div>
+                            <h3>UI/UX Design</h3>
+                            <div class="score-row">
+                                <span>Score</span>
+                                <span class="score-percent">92%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress fill-92"></div></div>
+                            <p class="verify-date">Verified: 1/20/2026</p>
+                            <button class="retake-btn">Retake Quiz</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="add-skills-section">
+                    <h3><i class="fa-solid fa-plus"></i> Add New Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="item-icon">🎨</span>
+                            <h4>Graphic Design</h4>
+                            <p>Visual and graphic design</p>
+                            <a href="#" class="verify-link">Click to verify →</a>
+                        </div>
+                        <div class="skill-item">
+                            <span class="item-icon">📊</span>
+                            <h4>Data Science</h4>
+                            <p>Data analysis and machine learning</p>
+                            <a href="#" class="verify-link">Click to verify →</a>
+                        </div>
+                        <div class="skill-item">
+                            <span class="item-icon">🎬</span>
+                            <h4>Video Editing</h4>
+                            <p>Video production and editing</p>
+                            <a href="#" class="verify-link">Click to verify →</a>
+                        </div>
+                        <div class="skill-item">
+                            <span class="item-icon">✍️</span>
+                            <h4>Content Writing</h4>
+                            <p>Creative and technical writing</p>
+                            <a href="#" class="verify-link">Click to verify →</a>
+                        </div>
+                        <div class="skill-item">
+                            <span class="item-icon">📱</span>
+                            <h4>Mobile Development</h4>
+                            <p>iOS and Android development</p>
+                            <a href="#" class="verify-link">Click to verify →</a>
+                        </div>
+                        <div class="skill-item">
+                            <span class="item-icon">📈</span>
+                            <h4>Digital Marketing</h4>
+                            <p>SEO and social media marketing</p>
+                            <a href="#" class="verify-link">Click to verify →</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="info-footer">
+                    <h4>Why Verify Skills?</h4>
+                    <ul>
+                        <li>Verified skills increase your credibility with clients</li>
+                        <li>Higher visibility in search results when clients look for specific skills</li>
+                        <li>Required to bid on jobs that need verified expertise</li>
+                        <li>Pass rate: 90% or above on skill verification quiz</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = window.location.pathname.split('/').pop().toLowerCase();
+        document.querySelectorAll('aside.sidebar a, aside.sidebar li a, aside.sidebar nav a').forEach(anchor => {
+          const href = anchor.getAttribute('href');
+          if (!href || href === '#') return;
+          const target = href.split('/').pop().toLowerCase();
+          if (target === currentPage) {
+            anchor.classList.add('active');
+            const parent = anchor.parentElement;
+            if (parent && parent.tagName === 'LI') parent.classList.add('active');
+          }
+        });
+      });
+    </script>
+</body>
+</html>

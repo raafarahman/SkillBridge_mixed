@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBridge - Earnings</title>
+    <link rel="stylesheet" href="My_earnings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="brand">SkillBridge</div>
+            <nav class="sidebar-nav">
+                <a href="Browse_jobs.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="Browse_jobs.html" class="nav-link"><i class="fa-solid fa-briefcase"></i> Browse Jobs</a>
+                <a href="My_bids.html" class="nav-link"><i class="fa-solid fa-file-invoice-dollar"></i> My Bids</a>
+                <a href="My_skill.html" class="nav-link"><i class="fa-solid fa-shield-halved"></i> My Skills</a>
+                <a href="My_earnings.html" class="nav-link active"><i class="fa-solid fa-wallet"></i> Earnings</a>
+                <a href="Notifications.html" class="nav-link"><i class="fa-solid fa-bell"></i> Notifications</a>
+                <a href="settings.html" class="nav-link"><i class="fa-solid fa-gear"></i> Settings</a>
+            </nav>
+            <a href="profile.html" class="sidebar-profile">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Alex Chan" class="profile-avatar">
+                <div class="profile-meta">
+                    <p class="user-fullname">Alex Chan</p>
+                    <p class="user-subtext">Freelancer</p>
+                </div>
+            </a>
+        </aside>
+
+        <main class="main-body">
+            <header class="navbar">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search jobs, freelancers, or skills...">
+                </div>
+                <div class="navbar-right">
+                    <a href="Notifications.html"><button class="icon-button"><i class="fa-regular fa-bell"></i></button></a>
+                    <a href="profile.html" class="header-user" style="text-decoration: none; color: inherit;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Alex Chan" class="header-avatar">
+                        <span>Alex Chan</span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="page-container">
+                <div class="title-header">
+                    <h1>Earnings</h1>
+                    <p>Track your income and transaction history</p>
+                </div>
+
+                <section class="summary-section">
+                    <div class="summary-card">
+                        <div class="icon-box green"><i class="fa-solid fa-dollar-sign"></i></div>
+                        <p class="label">Total Earned</p>
+                        <h2 class="amount">$4,700</h2>
+                    </div>
+                    <div class="summary-card">
+                        <div class="icon-box orange"><i class="fa-regular fa-clock"></i></div>
+                        <p class="label">Pending Clearance</p>
+                        <h2 class="amount">$8,000</h2>
+                    </div>
+                    <div class="summary-card">
+                        <div class="icon-box blue"><i class="fa-solid fa-chart-line"></i></div>
+                        <p class="label">Available to Withdraw</p>
+                        <h2 class="amount">$12,500</h2>
+                    </div>
+                </section>
+
+                <section class="actions-card">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="btn-primary">Withdraw Funds</button>
+                        <button class="btn-outline">Download Statement</button>
+                        <button class="btn-outline">Tax Documents</button>
+                    </div>
+                </section>
+
+                <section class="history-card">
+                    <h3>Transaction History</h3>
+                    <table class="transaction-table">
+                        <thead>
+                            <tr>
+                                <th>Job Name</th>
+                                <th>Client</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="job-name">Logo Design Project</td>
+                                <td>Tech Startup Inc</td>
+                                <td class="pos-val">+$1,200</td>
+                                <td>2/28/2026</td>
+                                <td><span class="badge-success">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td class="job-name">Website Redesign</td>
+                                <td>Small Business LLC</td>
+                                <td class="pos-val">+$3,500</td>
+                                <td>2/15/2026</td>
+                                <td><span class="badge-success">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td class="job-name">Mobile App Development</td>
+                                <td>Innovat ion Labs</td>
+                                <td class="pos-val">+$8,000</td>
+                                <td>3/5/2026</td>
+                                <td><span class="badge-warning">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

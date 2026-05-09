@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+    <title>SkillBridge - My Bids</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="My_bids.css" />
+</head>
+<body>
+    <div class="my-bids-container">
+        <aside class="sidebar">
+            <h2 class="logo">SkillBridge</h2>
+            <ul class="menu">
+                <li><a class="nav-link" href="dashboard.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a class="nav-link" href="Browse_jobs.html"><i class="fas fa-briefcase"></i> Browse Jobs</a></li>
+                <li><a class="nav-link active" href="My_bids.html"><i class="fas fa-gavel"></i> My Bids</a></li>
+                <li><a class="nav-link" href="My_skill.html"><i class="fas fa-bolt"></i> My Skills</a></li>
+                <li><a class="nav-link" href="My_earnings.html"><i class="fas fa-wallet"></i> Earnings</a></li>
+                <li><a class="nav-link" href="Notifications.html"><i class="fas fa-bell"></i> Notifications</a></li>
+                <li><a class="nav-link" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <a href="profile.html" class="sidebar-footer" style="text-decoration: none; color: inherit;">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Alex Chan" class="user-avatar profile-pic">
+                <div class="user-details">
+                    <span class="user-name">Alex Chan</span>
+                    <span class="user-role">Freelancer</span>
+                </div>
+            </a>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-navbar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search jobs, freelancers, or skills..." class="search-input" />
+                </div>
+                <div class="navbar-actions">
+                    <a href="Notifications.html"><button class="icon-button"><i class="fa-regular fa-bell"></i></button></a>
+                    <a href="profile.html" class="profile-pill" style="text-decoration: none; color: inherit;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Alex Chan" class="small-avatar profile-pic">
+                        <span class="profile-name">Alex Chan</span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <div class="page-header">
+                    <h1 class="page-title">My Bids</h1>
+                    <p class="page-subtitle">Track all your submitted bids and their status</p>
+                </div>
+
+                <div class="table-container">
+                    <table class="bids-table">
+                        <thead>
+                            <tr>
+                                <th>Job Title</th>
+                                <th>Bid Amount</th>
+                                <th>Delivery Time</th>
+                                <th>Submitted</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="job-title-cell">E-commerce Website Development</td>
+                                <td>$4,800</td>
+                                <td>4 weeks</td>
+                                <td>3/6/2026</td>
+                                <td><span class="status-pending">pending</span></td>
+                                <td><button class="btn-details">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td class="job-title-cell">React Dashboard Integration</td>
+                                <td>$5,200</td>
+                                <td>5 weeks</td>
+                                <td>3/6/2026</td>
+                                <td><span class="status-pending">pending</span></td>
+                                <td><button class="btn-details">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td class="job-title-cell">Mobile App UI Design</td>
+                                <td>$2,400</td>
+                                <td>2 weeks</td>
+                                <td>3/9/2026</td>
+                                <td><span class="status-pending">pending</span></td>
+                                <td><button class="btn-details">View Details</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

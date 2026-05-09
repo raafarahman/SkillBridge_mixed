@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Your Bid</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 250px;
+      background: #1e2937;
+      color: white;
+      padding: 24px 0;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar .logo {
+      padding: 0 20px;
+      margin-bottom: 30px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .sidebar-nav .nav-item {
+      padding: 12px 20px;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.3s;
+    }
+
+    .sidebar-nav .nav-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .sidebar-nav .nav-item.active {
+      background: #14b8a6;
+      color: white;
+    }
+
+    .sidebar-user {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .sidebar-user .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .sidebar-user .user-info p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .sidebar-user .user-name {
+      font-weight: 600;
+    }
+
+    .sidebar-user .user-role {
+      opacity: 0.8;
+      font-size: 12px;
+    }
+
+    /* Main content */
+    .main-wrapper {
+      margin-left: 250px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      background: white;
+      padding: 16px 24px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bid-container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 520px;
+      overflow: hidden;
+    }
+
+    .header {
+      background: #0f172a;
+      color: white;
+      padding: 20px;
+      position: relative;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .header p {
+      opacity: 0.9;
+      font-size: 15px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      opacity: 0.8;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .close-btn:hover {
+      opacity: 1;
+      transform: translateX(-3px);
+    }
+
+    .content {
+      padding: 24px;
+    }
+
+    .budget-box {
+      background: #f1f5f9;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
+    .budget-label {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+
+    .budget-amount {
+      font-size: 28px;
+      font-weight: bold;
+      color: #1e2937;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #1e2937;
+    }
+
+    .required::after {
+      content: " *";
+      color: #ef4444;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .dollar-sign {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 16px 14px 45px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #14b8a6;
+      box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+      padding: 14px 16px;
+    }
+
+    .hint {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 6px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    button {
+      flex: 1;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .cancel-btn {
+      background: white;
+      color: #334155;
+      border: 2px solid #e2e8f0;
+    }
+
+    .submit-btn {
+      background: #14b8a6;
+      color: white;
+      border: none;
+    }
+
+    .submit-btn:hover {
+      background: #0f766e;
+    }
+
+    .tip {
+      background: #e0f2fe;
+      border-left: 4px solid #0ea5e9;
+      padding: 14px;
+      border-radius: 6px;
+      margin-top: 24px;
+      font-size: 14px;
+      color: #0c4a6e;
+    }
+
+    .tip strong {
+      color: #0369a1;
+    }
+  </style>  
+
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2 class="logo">SkillBridge</h2>
+    <nav class="sidebar-nav">
+      <a href="Browse_jobs.html" class="nav-item"><i class="fas fa-house"></i> Home</a>
+      <a href="Browse_jobs.html" class="nav-item"><i class="fas fa-briefcase"></i> Browse Jobs</a>
+      <a href="My_bids.html" class="nav-item active"><i class="fas fa-file-invoice-dollar"></i> My Bids</a>
+      <a href="My_skill.html" class="nav-item"><i class="fas fa-shield-halved"></i> My Skills</a>
+      <a href="My_earnings.html" class="nav-item"><i class="fas fa-wallet"></i> Earnings</a>
+      <a href="Notifications.html" class="nav-item"><i class="fas fa-bell"></i> Notifications</a>
+      <a href="Settings.html" class="nav-item"><i class="fas fa-gear"></i> Settings</a>
+    </nav>
+    <a href="Profile.html" class="sidebar-user" style="text-decoration: none; color: inherit;">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Alex Chan" class="avatar">
+      <div class="user-info">
+        <p class="user-name">Alex Chan</p>
+        <p class="user-role">Freelancer</p>
+      </div>
+    </a>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-wrapper">
+    <div class="topbar">
+      <h3>Place Your Bid</h3>
+    </div>
+
+    <div class="main-content">
+      <div class="bid-container">
+        <!-- Header -->
+        <div class="header">
+          <h1>Place Your Bid</h1>
+          <p>E-commerce Website Development</p>
+          <a href="Job_Details1.html" class="close-btn" title="Go back">←</a>
+        </div>
+
+        <div class="content">
+      <!-- Budget -->
+      <div class="budget-box">
+        <div class="budget-label">Client's Budget</div>
+        <div class="budget-amount">$5,000 <span style="font-size:16px; font-weight:500; color:#64748b;">(Fixed)</span></div>
+      </div>
+
+      <!-- Bid Amount -->
+      <div class="form-group">
+        <label class="required">Your Bid Amount</label>
+        <div class="input-wrapper">
+          <span class="dollar-sign">$</span>
+          <input type="number" id="bidAmount" placeholder="Enter your bid amount" required>
+        </div>
+        <div class="hint">Recommended to bid competitively while ensuring fair compensation</div>
+      </div>
+
+      <!-- Delivery Time -->
+      <div class="form-group">
+        <label class="required">Estimated Delivery Time</label>
+        <input type="text" id="deliveryTime" placeholder="e.g., 2 weeks, 1 month" required>
+      </div>
+
+      <!-- Cover Letter -->
+      <div class="form-group">
+        <label class="required">Cover Letter</label>
+        <textarea id="coverLetter" placeholder="Introduce yourself and explain why you're the best fit for this project..."></textarea>
+        <div class="hint">Highlight your relevant experience and skills</div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button class="cancel-btn" onclick="window.location.href='Job_Details1.html'">Cancel</button>
+        <button class="submit-btn" onclick="submitBid()">Submit Bid</button>
+      </div>
+
+      <!-- Tip -->
+      <div class="tip">
+        <strong>Tip:</strong> Clients are more likely to accept bids that demonstrate understanding of the project and showcase relevant experience.
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function submitBid() {
+      const bidAmount = document.getElementById('bidAmount').value;
+      const deliveryTime = document.getElementById('deliveryTime').value;
+      const coverLetter = document.getElementById('coverLetter').value;
+
+      if (!bidAmount || !deliveryTime || !coverLetter) {
+        alert("Please fill in all required fields!");
+        return;
+      }
+
+      alert(`✅ Bid Submitted Successfully!\n\nBid Amount: $${bidAmount}\nDelivery Time: ${deliveryTime}`);
+      // Here you can send data to backend using fetch()
+    }
+
+    // Bonus: Auto format bid amount with comma
+    document.getElementById('bidAmount').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/[^0-9.]/g, '');
+      e.target.value = value;
+    });
+  </script>
+
+</body>
+</html>

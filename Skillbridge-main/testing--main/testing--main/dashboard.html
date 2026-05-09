@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SkillBridge</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-sidebar">SkillBridge</div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item active">
+                    <i class="fa fa-home"></i> Home
+                </a>
+
+                <a href="Browse_jobs.html" class="nav-item">
+                    <i class="fa fa-briefcase"></i> Browse Jobs
+                </a>
+
+                <a href="My_bids.html" class="nav-item">
+                    <i class="fa fa-folder"></i> My Bids
+                </a>
+
+                <a href="My_skill.html" class="nav-item">
+                    <i class="fa fa-brain"></i> My Skills
+                </a>
+
+                <a href="My_earnings.html" class="nav-item">
+                    <i class="fa fa-dollar-sign"></i> Earnings
+                </a>
+
+                <a href="Notifications.html" class="nav-item">
+                    <i class="fa fa-bell"></i> Notifications
+                </a>
+
+                <a href="settings.html" class="nav-item">
+                    <i class="fa fa-cog"></i> Settings
+                </a>
+
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info" onclick="window.location.href='profile.html'" style="cursor:pointer">
+
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                        alt="Alex Chan" class="user-avatar">
+
+                    <div>
+                        <p class="user-name">Alex Chan</p>
+                        <p class="user-role">Freelancer</p>
+                    </div>
+
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fa fa-search"></i>
+                    <input type="text" placeholder="Search jobs, freelancers, or skills..." />
+                </div>
+                <div class="top-right">
+                    <a href="Notifications.html"><button class="icon-button"><i class="fa fa-bell"></i></button></a>
+                    <div class="profile-dropdown">
+                        <div class="user-profile" onclick="toggleDropdown()">
+                            <span class="user-name-top">Alex Chan</span>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                                alt="Alex Chan" class="avatar-small">
+
+                        </div>
+                        <div id="dropdownMenu" class="dropdown-menu">
+                            <a href="profile.html"><i class="fa fa-user"></i> My Profile</a>
+                            <a href="settings.html"><i class="fa fa-cog"></i> Settings</a>
+                            <a href="index.html" onclick="logout()" style="color:red">
+                                <i class="fa fa-sign-out"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <h1>Welcome back, Alex! 👋</h1>
+                <p>Ready to find your next project?</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <h3>Active Bids</h3>
+                    <p class="stat-number">3</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <h3>Jobs Won</h3>
+                    <p class="stat-number">12</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💵</div>
+                    <h3>Total Earnings</h3>
+                    <p class="stat-number">$45,000</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👁️</div>
+                    <h3>Profile Views</h3>
+                    <p class="stat-number">1,250</p>
+                </div>
+            </div>
+
+            <!-- Recent Job Posts -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>Recent Job Posts</h2>
+                    <a href="Browse_jobs.html" class="view-all">View All →</a>
+                </div>
+
+                <div class="job-list">
+
+                    <!-- Job 1: E-commerce -->
+                    <div class="job-card">
+                        <div class="job-info">
+                            <h3>E-commerce Website Development</h3>
+                            <p class="client">Sarah Johnson • Posted 3/5/2026</p>
+                            <p class="description">Looking for an experienced web developer to build a modern e-commerce
+                                platform with payment integration, shopping cart, and admin dashboard.</p>
+                            <div class="tags">
+                                <span class="tag">Web Development</span>
+                                <span class="tag">UI/UX Design</span>
+                            </div>
+                            <p class="bids">12 bids</p>
+                        </div>
+                        <div class="job-price">
+                            <p class="price">$5,000</p>
+                            <p class="price-type">Fixed</p>
+                        </div>
+                    </div>
+
+                    <!-- Job 2: Mobile App UI Design -->
+                    <div class="job-card">
+                        <div class="job-info">
+                            <h3>Mobile App UI Design</h3>
+                            <p class="client">Tech Innovations Inc • Posted 3/8/2026</p>
+                            <p class="description">Need a talented UI/UX designer to create mockups and prototypes for a
+                                fitness tracking mobile application.</p>
+                            <div class="tags">
+                                <span class="tag">UI/UX Design</span>
+                                <span class="tag">Graphic Design</span>
+                            </div>
+                            <p class="bids">8 bids</p>
+                        </div>
+                        <div class="job-price">
+                            <p class="price">$2,500</p>
+                            <p class="price-type">Fixed</p>
+                        </div>
+                    </div>
+
+                    <!-- Job 3: Data Analysis -->
+                    <div class="job-card">
+                        <div class="job-info">
+                            <h3>Data Analysis and Visualization</h3>
+                            <p class="client">Analytics Pro • Posted 3/10/2026</p>
+                            <p class="description">Seeking a data scientist to analyze sales data and create interactive
+                                dashboards for business insights.</p>
+                            <div class="tags">
+                                <span class="tag">Data Science</span>
+                            </div>
+                            <p class="bids">5 bids</p>
+                        </div>
+                        <div class="job-price">
+                            <p class="price">$75</p>
+                            <p class="price-type">Hourly</p>
+                        </div>
+                    </div>
+
+                    <!-- Job 4: Video Editing -->
+                    <div class="job-card">
+                        <div class="job-info">
+                            <h3>Video Editing for YouTube Channel</h3>
+                            <p class="client">Sarah Johnson • Posted 3/9/2026</p>
+                            <p class="description">Looking for a video editor to edit weekly vlogs for a travel YouTube
+                                channel. Must have experience with color grading and transitions.</p>
+                            <div class="tags">
+                                <span class="tag">Video Editing</span>
+                            </div>
+                            <p class="bids">15 bids</p>
+                        </div>
+                        <div class="job-price">
+                            <p class="price">$500</p>
+                            <p class="price-type">Fixed</p>
+                        </div>
+                    </div>
+
+                    <!-- Job 5: Blog Content Writing -->
+                    <div class="job-card">
+                        <div class="job-info">
+                            <h3>Blog Content Writing</h3>
+                            <p class="client">Digital Media Co • Posted 3/7/2026</p>
+                            <p class="description">Need a skilled content writer to create SEO-optimized blog posts on
+                                technology and business topics.</p>
+                            <div class="tags">
+                                <span class="tag">Content Writing</span>
+                                <span class="tag">Digital Marketing</span>
+                            </div>
+                            <p class="bids">20 bids</p>
+                        </div>
+                        <div class="job-price">
+                            <p class="price">$40</p>
+                            <p class="price-type">Hourly</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

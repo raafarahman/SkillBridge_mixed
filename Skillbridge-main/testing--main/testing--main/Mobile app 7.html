@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page - Question 2</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .quiz-container {
+            background-color: #ffffff;
+            width: 650px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 25px;
+            top: 20px;
+            font-size: 28px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .quiz-title {
+            color: #0d2167;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .question-count {
+            color: #777;
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .progress-container {
+            background-color: #e5e7eb;
+            height: 8px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            background-color: #00bf8f;
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .question-text {
+            font-size: 19px;
+            color: #0d2167;
+            margin-bottom: 25px;
+        }
+
+        .options-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            border: 1.5px solid #ececec;
+            padding: 18px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #444;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            background-color: #fcfcfc;
+            border-color: #d1d1d1;
+        }
+
+        .option.selected {
+            border-color: #00bf8f;
+            background-color: #f0fdfa;
+        }
+
+        .note-box {
+            margin-top: 35px;
+            background-color: #eff6ff;
+            border: 1px solid #dbeafe;
+            color: #1e40af;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-container">
+        <span class="close-btn">&times;</span>
+
+        <h2 class="quiz-title">Web Development Verification Quiz</h2>
+        <p class="question-count">Question 7 of 10</p>
+
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 70%;"></div>
+        </div>
+
+        <h3 class="question-text">What is the correct way to create a function in JavaScript?</h3>
+
+        <div class="options-group">
+            <div class="option" onclick="window.location.href='Mobile app 8.html'">function myFunction() {}</div>
+            <div class="option" onclick="window.location.href='Mobile app 8.html'">myFunction(): void {}</div>
+            <div class="option" onclick="window.location.href='Mobile app 8.html'">create myFunction() {}</div>
+            <div class="option" onclick="window.location.href='Mobile app 8.html'">function: myFunction() {}</div>
+        </div>
+
+        <div class="note-box">
+            <strong>Note:</strong> You need to score 90% or above to verify this skill and add it to your profile.
+        </div>
+    </div>
+
+    <script>
+        function selectOption(element) {
+            // Shob option theke selection muche fela
+            const allOptions = document.querySelectorAll('.option');
+            allOptions.forEach(opt => opt.classList.remove('selected'));
+
+            // Click kora option-ti select kora
+            element.classList.add('selected');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details</title>
+    <link rel="stylesheet" href="Job_Details3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="logo">SkillBridge</h2>
+
+        <ul class="menu">
+            <li><a href="Browse_jobs.html"><i class="fa fa-home"></i> Home</a></li>
+            <li class="active"><a href="Browse_jobs.html"><i class="fa fa-briefcase"></i> Browse Jobs</a></li>
+            <li><a href="My_bids.html"><i class="fa fa-folder"></i> My Bids</a></li>
+            <li><a href="My_skill.html"><i class="fa fa-brain"></i> My Skills</a></li>
+            <li><a href="My_earnings.html"><i class="fa fa-dollar-sign"></i> Earnings</a></li>
+            <li><a href="Notifications.html"><i class="fa fa-bell"></i> Notifications</a></li>
+            <li><a href="Settings.html"><i class="fa fa-cog"></i> Settings</a></li>
+        </ul>
+
+        <a href="Profile.html" class="profile" style="text-decoration: none; color: inherit;">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Alex Chan" class="avatar profile-pic">
+            <div>
+                <p>Alex Chan</p>
+                <small>Freelancer</small>
+            </div>
+        </a>
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="search">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search jobs, freelancers, or skills...">
+            </div>
+
+            <div class="top-icons">
+                <i class="fa fa-bell"></i>
+                <div class="user">
+                    <a href="Profile.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Alex Chan" class="avatar small profile-pic">
+                        <span>Alex Chan</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back -->
+        <a href="Browse_jobs.html" class="back">← Back to Browse Jobs</a>
+
+        <!-- Content -->
+        <div class="content">
+
+            <!-- LEFT -->
+            <div class="left">
+
+                <div class="card">
+                    <h2>Data Analysis and Visualization</h2>
+
+                    <div class="meta">
+                        <span><i class="fa fa-clock"></i> Posted 3/10/2026</span>
+                        <span><i class="fa fa-users"></i> 5 bids</span>
+                    </div>
+
+                    <h3>Job Description</h3>
+                    <p>
+                        Seeking a data scientist to analyze sales data and create interactive dashboards for business insights.
+                    </p>
+
+                    <h3>Required Skills</h3>
+                    <div class="tags">
+                        <span>Data Science</span>
+                    </div>
+
+                    <!-- Info Box -->
+                    <div class="info-box">
+                        <div>
+                            <small>Budget</small>
+                            <h4>$75</h4>
+                            <p>Hourly</p>
+                        </div>
+
+                        <div>
+                            <small>Deadline</small>
+                            <h4>4/1/2026</h4>
+                        </div>
+
+                        <div>
+                            <small>Status</small>
+                            <span class="status">Open</span>
+                        </div>
+                    </div>
+
+                    <a href="Mobile app.html"><button class="bid-btn">Place a Bid</button></a>
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="right">
+
+                <div class="card client">
+                    <h3>About the Client</h3>
+
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="Analytics Pro" class="avatar big profile-pic">
+                        <div>
+                            <h4>Analytics Pro</h4>
+                            <p><i class="fa fa-star"></i> 4.7</p>
+                        </div>
+                    </div>
+
+                    <div class="client-stats">
+                        <p>Member since <span>Aug 2025</span></p>
+                        <p>Jobs posted <span>15</span></p>
+                        <p>Total spent <span>$28,000</span></p>
+                    </div>
+
+                    <button class="profile-btn" onclick="viewProfile()">View Client Profile</button>
+                    <button class="report-btn" onclick="reportClient()">Report Client</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+function viewProfile() {
+    alert('Viewing client profile for Analytics Pro');
+}
+
+function reportClient() {
+    alert('Report submitted for Analytics Pro');
+}
+</script>
+</body>
+</html>

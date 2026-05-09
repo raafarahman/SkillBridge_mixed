@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page - Question 3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .quiz-container {
+            background-color: #ffffff;
+            width: 650px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 25px;
+            top: 20px;
+            font-size: 26px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .quiz-title {
+            color: #0d2167;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .question-count {
+            color: #6b7280;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .progress-container {
+            background-color: #e5e7eb;
+            height: 8px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            background-color: #00bf8f;
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.4s ease;
+        }
+
+        .question-text {
+            font-size: 18px;
+            color: #0d2167;
+            line-height: 1.4;
+            margin-bottom: 25px;
+        }
+
+        .options-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            border: 1.5px solid #ececec;
+            padding: 16px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            /* Code look dewar jonno */
+            font-size: 15px;
+            color: #4b5563;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            background-color: #f9fafb;
+            border-color: #d1d5db;
+        }
+
+        .option.selected {
+            border-color: #00bf8f;
+            background-color: #f0fdf4;
+            color: #065f46;
+        }
+
+        .note-box {
+            margin-top: 30px;
+            background-color: #eff6ff;
+            border: 1px solid #dbeafe;
+            color: #1e40af;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-container">
+        <span class="close-btn">&times;</span>
+
+        <h2 class="quiz-title">Web Development Verification Quiz</h2>
+        <p class="question-count">Question 3 of 10</p>
+
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 30%;"></div>
+        </div>
+
+        <h3 class="question-text">What is the correct JavaScript syntax to change the content of an HTML element?</h3>
+
+        <div class="options-group">
+            <div class="option" onclick="window.location.href='Mobile app 4.html'">document.getElement("p").innerHTML = "Hello"</div>
+            <div class="option" onclick="window.location.href='Mobile app 4.html'">document.getElementById("p").innerHTML = "Hello"</div>
+            <div class="option" onclick="window.location.href='Mobile app 4.html'">#demo.innerHTML = "Hello"</div>
+            <div class="option" onclick="window.location.href='Mobile app 4.html'">document.getElementByName("p") = "Hello"</div>
+        </div>
+
+        <div class="note-box">
+            <strong>Note:</strong> You need to score 90% or above to verify this skill and add it to your profile.
+        </div>
+    </div>
+
+    <script>
+        function selectOption(element) {
+            // Agere selected thaka option remove kora
+            const allOptions = document.querySelectorAll('.option');
+            allOptions.forEach(opt => opt.classList.remove('selected'));
+
+            // Notun option select kora
+            element.classList.add('selected');
+        }
+    </script>
+</body>
+
+</html>

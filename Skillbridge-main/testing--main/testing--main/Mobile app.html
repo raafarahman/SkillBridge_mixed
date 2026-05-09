@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Quiz UI</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .quiz-container {
+            background-color: #ffffff;
+            width: 600px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 24px;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .quiz-title {
+            color: #002366;
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .question-count {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background-color: #e0e0e0;
+            height: 6px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            background-color: #00c091;
+            /* Teal color from image */
+            width: 10%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            color: #002366;
+            margin-bottom: 25px;
+        }
+
+        /* Options Styling */
+        .options-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            border: 1px solid #ddd;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #333;
+        }
+
+        .option:hover {
+            background-color: #f9f9f9;
+            border-color: #aaa;
+        }
+
+        .option.selected {
+            border-color: #00c091;
+            background-color: #f0faf8;
+        }
+
+        /* Note Box */
+        .note-box {
+            margin-top: 30px;
+            background-color: #eff6ff;
+            border: 1px solid #dbeafe;
+            color: #1e40af;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-container">
+        <span class="close-btn">&times;</span>
+
+        <h2 class="quiz-title">Web Development Verification Quiz</h2>
+        <p class="question-count">Question 1 of 10</p>
+
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+
+        <h3 class="question-text">What does HTML stand for?</h3>
+
+        <div class="options-group">
+            <div class="option" onclick="window.location.href='Mobile app 2.html'">Hyper Text Markup Language</div>
+            <div class="option" onclick="window.location.href='Mobile app 2.html'">High Tech Modern Language</div>
+            <div class="option" onclick="window.location.href='Mobile app 2.html'">Home Tool Markup Language</div>
+            <div class="option" onclick="window.location.href='Mobile app 2.html'">Hyperlinks and Text Markup Language</div>
+        </div>
+
+        <div class="note-box">
+            <strong>Note:</strong> You need to score 90% or above to verify this skill and add it to your profile.
+        </div>
+    </div>
+
+    <script>
+        function selectOption(element) {
+            // Shob option theke 'selected' class remove kora
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+
+            // Shudhu click kora option-e 'selected' class add kora
+            element.classList.add('selected');
+        }
+    </script>
+</body>
+
+</html>

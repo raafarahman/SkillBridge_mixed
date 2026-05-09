@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings - SkillBridge</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo-sidebar">SkillBridge</div>
+
+      <nav class="sidebar-nav">
+
+        <a href="dashboard.html" class="nav-item">
+          <i class="fa fa-home"></i> Home
+        </a>
+
+        <a href="Browse_jobs.html" class="nav-item">
+          <i class="fa fa-briefcase"></i> Browse Jobs
+        </a>
+
+        <a href="My_bids.html" class="nav-item">
+          <i class="fa fa-folder"></i> My Bids
+        </a>
+
+        <a href="My_skill.html" class="nav-item">
+          <i class="fa fa-brain"></i> My Skills
+        </a>
+
+        <a href="My_earnings.html" class="nav-item">
+          <i class="fa fa-dollar-sign"></i> Earnings
+        </a>
+
+        <a href="Notifications.html" class="nav-item">
+          <i class="fa fa-bell"></i> Notifications
+        </a>
+
+        <a href="settings.html" class="nav-item active">
+          <i class="fa fa-cog"></i> Settings
+        </a>
+
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-info" onclick="window.location.href='profile.html'" style="cursor:pointer">
+
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Alex Chan"
+            class="user-avatar profile-pic">
+
+          <div>
+            <p class="user-name">Alex Chan</p>
+            <p class="user-role">Freelancer</p>
+          </div>
+
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <header class="top-bar">
+        <div class="search-bar">
+          <i class="fa fa-search"></i>
+          <input type="text" placeholder="Search jobs, freelancers, or skills..." />
+        </div>
+        <div class="top-right">
+          <button class="icon-btn"><i class="fa fa-bell"></i></button>
+
+          <!-- Profile Dropdown -->
+          <div class="profile-dropdown">
+            <div class="user-profile" onclick="toggleDropdown()">
+              <span class="user-name-top">Alex Chan</span>
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                alt="Alex Chan" class="avatar-small">
+            </div>
+            <div id="dropdownMenu" class="dropdown-menu">
+              <a href="profile.html"><i class="fa fa-user"></i> My Profile</a>
+              <a href="settings.html"><i class="fa fa-cog"></i> Settings</a>
+              <a href="index.html" onclick="logout()" style="color:red"><i class="fa fa-sign-out"></i> Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <h1 class="page-title">Settings</h1>
+      <p class="page-subtitle">Manage your account settings and preferences</p>
+
+      <div class="settings-container">
+
+        <!-- Left Sidebar Menu -->
+        <div class="settings-menu">
+          <div class="menu-item active" data-tab="profile">👤 Profile</div>
+          <div class="menu-item" data-tab="password">🔒 Password</div>
+          <div class="menu-item" data-tab="notifications">🛎️ Notifications</div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="settings-content">
+
+          <!-- Profile Tab -->
+          <div id="profile" class="tab-content active card">
+            <h2>Profile Settings</h2>
+            <div class="profile-photo">
+              <div class="photo-circle">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                  alt="Alex Chan" class="user-avatar profile-pic" <button class="upload-btn">Upload New Photo</button>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Full Name</label><br>
+                  <input type="text" value="Alex Chan" />
+                </div>
+                <div class="form-group">
+                  <label>Email</label><br>
+                  <input type="email" value="alex@example.com" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Tagline</label><br>
+                <input type="text" value="Full-stack developer specializing in React and Node.js" />
+              </div>
+
+              <button class="btn btn-primary save-btn">Save Changes</button>
+            </div>
+
+            <!-- Password Tab -->
+            <div id="password" class="tab-content card">
+              <h2>Change Password</h2>
+              <div class="form-group">
+                <label>Current Password</label>
+                <input type="password" placeholder="Enter current password" />
+              </div>
+              <div class="form-group">
+                <label>New Password</label>
+                <input type="password" placeholder="Enter new password" />
+              </div>
+              <div class="form-group">
+                <label>Confirm New Password</label>
+                <input type="password" placeholder="Confirm new password" />
+              </div>
+              <button class="btn btn-primary save-btn">Update Password</button>
+            </div>
+
+            <!-- Notifications Tab -->
+            <div id="notifications" class="tab-content card">
+              <h2>Notification Preferences</h2>
+
+              <div class="notification-item">
+                <div>
+                  <strong>Email Notifications</strong>
+                  <p>Receive email updates about your account</p>
+                </div>
+                <input type="checkbox" checked />
+              </div>
+
+              <div class="notification-item">
+                <div>
+                  <strong>New Bids</strong>
+                  <p>Get notified when you receive a new bid</p>
+                </div>
+                <input type="checkbox" checked />
+              </div>
+
+              <div class="notification-item">
+                <div>
+                  <strong>Bid Accepted</strong>
+                  <p>Get notified when your bid is accepted</p>
+                </div>
+                <input type="checkbox" checked />
+              </div>
+
+              <div class="notification-item">
+                <div>
+                  <strong>Marketing Emails</strong>
+                  <p>Receive news and promotional emails</p>
+                </div>
+                <input type="checkbox" />
+              </div>
+
+              <button class="btn btn-primary save-btn">Save Preferences</button>
+            </div>
+
+          </div>
+        </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result - Not Quite There</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            margin: 0;
+        }
+
+        .result-container {
+            background-color: #ffffff;
+            width: 500px;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Red Icon */
+        .status-icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .red-circle {
+            background-color: #ff3b30;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 40px;
+            box-shadow: 0 4px 10px rgba(255, 59, 48, 0.3);
+        }
+
+        .result-status {
+            color: red;
+            margin: 0;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .result-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0 30px;
+        }
+
+        /* Score Card */
+        .score-card {
+            background-color: #f8fbff;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .score-label {
+            color: #888;
+            font-size: 12px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .score-percentage {
+            color: #002366;
+            font-size: 48px;
+            margin: 10px 0;
+        }
+
+        .score-count {
+            color: #666;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            text-align: left;
+        }
+
+        .section-title {
+            color: #002366;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .course-item {
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-info h4 {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .course-info p {
+            font-size: 12px;
+            color: #777;
+            margin: 5px 0;
+            line-height: 1.4;
+        }
+
+        .platform {
+            font-size: 11px;
+            color: #00bf8f;
+            font-weight: bold;
+        }
+
+        .visit-btn {
+            background-color: #00bf8f;
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+
+        /* Footer Buttons */
+        .action-footer {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-primary {
+            flex: 1;
+            background-color: #1e295b;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-secondary {
+            flex: 1;
+            background-color: white;
+            color: #1e295b;
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="result-container">
+        <div class="status-icon">
+            <div class="red-circle">
+                <span>&times;</span>
+            </div>
+        </div>
+
+        <h1 class="result-status">Not Quite There</h1>
+        <p class="result-subtitle">You need 90% or above to add this skill</p>
+
+        <div class="score-card">
+            <p class="score-label">Your Score</p>
+            <h2 class="score-percentage">0%</h2>
+            <p class="score-count">0 out of 10 correct</p>
+        </div>
+
+        <div class="courses-section">
+            <h3 class="section-title">Recommended Courses</h3>
+
+            <div class="course-item">
+                <div class="course-info">
+                    <h4>Complete Web Development Bootcamp</h4>
+                    <p>Master web development from scratch with HTML, CSS, JavaScript, React, Node.js, and more.</p>
+                    <span class="platform">Platform: Udemy</span>
+                </div>
+                <a href="https://www.udemy.com/" class="visit-btn">Visit Course &rarr;</a>
+            </div>
+
+            <div class="course-item">
+                <div class="course-info">
+                    <h4>Advanced JavaScript Concepts</h4>
+                    <p>Deep dive into advanced JavaScript topics including async programming, closures, and more.</p>
+                    <span class="platform">Platform: Coursera</span>
+                </div>
+                <a href="https://www.coursera.org/" class="visit-btn">Visit Course &rarr;</a>
+            </div>
+
+            <div class="course-item">
+                <div class="course-info">
+                    <h4>Web Development Tutorial for Beginners</h4>
+                    <p>Free comprehensive video series covering all aspects of web development.</p>
+                    <span class="platform">Platform: YouTube</span>
+                </div>
+                <a href="https://www.youtube.com/" class="visit-btn">Visit Course &rarr;</a>
+            </div>
+        </div>
+
+        <div class="action-footer">
+            <a href="Mobile app.html"><button class="btn-secondary">Try Again Later</button>
+            </a>
+            <a href="Browse_jobs.html">
+            <button class="btn-primary">Close</button></a>
+        </div>
+    </div>
+
+</body>
+
+</html>
